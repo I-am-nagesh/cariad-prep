@@ -2,3 +2,5 @@
 **/managed_components
 .env
 **.vscode
+**sdkconfig
+**sdkconfig.old
