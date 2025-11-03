@@ -3,10 +3,11 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 
-#define TAG "BLINK Manually"
-#define LED_PIN GPIO_NUM_2   
+#define LED_PIN GPIO_NUM_2
 
-extern "C" void app_main(void)
+static const char *TAG = "LED TASK";
+
+extern "C" void led_task(void *pvParameter)
 {
     gpio_reset_pin(LED_PIN);
     gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
