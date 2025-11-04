@@ -1,6 +1,11 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#include "freertos/semphr.h"
+
+//defining semaphore handle to be used in wifi.cpp and led.cpp
+SemaphoreHandle_t wifi_semaphore = xSemaphoreCreateBinary();
+
 extern "C" void wifi_task(void *pvParameter);
 extern "C" void led_task(void *pvParameter);
 
